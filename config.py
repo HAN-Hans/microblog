@@ -14,7 +14,9 @@ OPENID_PROVIDERS = [
     {'name': 'Yahoo', 'url': 'https://me.yahoo.com'},
     {'name': 'AOL', 'url': 'http://openid.aol.com/<username>'},
     {'name': 'Flickr', 'url': 'http://www.flickr.com/<username>'},
-    {'name': 'MyOpenID', 'url': 'https://www.myopenid.com'}]
+    # {'name': 'MyOpenID', 'url': 'https://www.myopenid.com'},
+    {'name': 'MyOpenID', 'url': 'https://www.myopenid.com'}
+    ]
 
 
 # 839: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds 
