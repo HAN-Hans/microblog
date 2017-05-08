@@ -30,8 +30,9 @@ class EditForm(FlaskForm):
 class PostForm(FlaskForm):
 	post = StringField('post', validators = [DataRequired()])
 
-								
-		
+# 10								
+class SearchForm(FlaskForm):
+    search = StringField('search', validators=[DataRequired()])		
 
 
 		

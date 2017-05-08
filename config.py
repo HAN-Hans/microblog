@@ -29,7 +29,9 @@ ADMINS = ['1415005857@qq.com']
 # pagination
 POST_PER_PAGE = 3
 
-
+# 10
+WHOOSH_BASE = os.path.join(basedir, 'search.db')
+MAX_SEARCH_RESULTS = 50
 
 # 839: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds 
 # significant overhead and will be disabled by default in the future.
