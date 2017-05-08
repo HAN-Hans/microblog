@@ -1,6 +1,8 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField, BooleanField, TextAreaField
 from wtforms.validators import DataRequired, Length
+from .models import User
+
 
 class LoginForm(FlaskForm):
 	openid = StringField('openid', validators = [DataRequired()])
@@ -19,13 +21,16 @@ class EditForm(FlaskForm):
 			return False
 		if self.nickname.data == self.original_nickname:
 			return True
-		user = self.nickname.filter_by(nickname = self.nickname.data).first()
+		user = User.query.filter_by(nickname = self.nickname.data).first()
 		if user != None:
 			self.nickname.errors.append('This nickname is already in use. Please choose another one.')
 			return False
 		return True
 					
-				
+class PostForm(FlaskForm):
+	post = StringField('post', validators = [DataRequired()])
+
+								
 		
 
 
