@@ -33,6 +33,19 @@ POST_PER_PAGE = 3
 WHOOSH_BASE = os.path.join(basedir, 'search.db')
 MAX_SEARCH_RESULTS = 50
 
+# email server
+MAIL_SERVER = 'smtp.qq.com'
+MAIL_PORT = 465
+MAIL_USE_TLS = False
+MAIL_USE_SSL = True
+MAIL_USERNAME = '1415005857@qq.com'
+MAIL_PASSWORD = 'dsfrptowftqfjcfi'
+
+# administrator list
+ADMINS = ['1415005857@qq.com']
+
+
+
 # 839: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds 
 # significant overhead and will be disabled by default in the future.
 #   Set it to True or False to suppress this warning.

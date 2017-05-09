@@ -12,7 +12,8 @@ from .forms import LoginForm, EditForm, PostForm, SearchForm
 from .models import User, Post
 # 10
 from config import POST_PER_PAGE, MAX_SEARCH_RESULTS
-
+# 11
+from .emails import follower_notification
 
 
 @lm.user_loader
@@ -148,6 +149,7 @@ def follow(nickname):
 	db.session.add(u)
 	db.session.commit()
 	flash('You are now following ' + nickname + '!')
+	follower_notification(user, g.user)
 	return redirect(url_for('user', nickname = nickname))
 
 @app.route('/unfollow/<nickname>')
@@ -183,6 +185,7 @@ def search():
 def search_results(query):
 	results = Post.query.whoosh_search(query, MAX_SEARCH_RESULTS).all()
 	return render_template('search_results.html', query = query, results = results)
+
 
 
 
