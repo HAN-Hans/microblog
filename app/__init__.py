@@ -46,5 +46,8 @@ if not app.debug:
 from flask_mail import Mail
 mail = Mail(app)
 
+from .momentjs import momentjs
+app.jinja_env.globals['momentjs'] = momentjs
+
 from app import views, models
 
